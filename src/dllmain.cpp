@@ -487,7 +487,7 @@ static void srvDiscoverReconcile() {
     if (g_isSrv != 1) return;
     UObject* mgr = UObjectGlobals::FindFirstOf(STR("PalMapObjectManager"));
     if (!mgr) return;
-    uint8_t* mm = (uint8_t*)mgr + 0x310;                        // MapObjectConcreteModelMapForServer (TMap)
+    uint8_t* mm = (uint8_t*)mgr + 0x328;                        // MapObjectConcreteModelMapForServer (TMap)
     uint8_t* elems  = *(uint8_t**)(mm + 0x00);                  // sparse-array element buffer
     int32_t  maxIdx = *(int32_t*)(mm + 0x08);                   // slots incl. holes (== NumBits)
     uint32_t* words = *(uint32_t**)(mm + 0x20); if (!words) words = (uint32_t*)(mm + 0x10);   // allocation bits
